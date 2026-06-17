@@ -1,0 +1,435 @@
+/* --- Academic Project Master Style Variables --- */
+:root {
+    --brand-purple: #4A154B;        /* UiTM Corporate Deep Royal Purple */
+    --brand-dark: #2D0B2F;          /* Deep Velvet Accent Night */
+    --accent-gold: #FFD700;         /* Luxury Gold High-Contrast Trim */
+    --surface-canvas: #F8FAFC;      /* Clean slate workspace canvas background */
+    --surface-card: #FFFFFF;        /* Ultra-bright solid element nodes */
+    --text-primary: #0F172A;        /* Premium contrast dark text for readability */
+    --text-secondary: #475569;      /* Smooth matte charcoal for metrics description */
+    --border-clean: #E2E8F0;        /* Subtle divider borders */
+    --radius-fluid: 16px;           /* Elegant fluid rounding for panels */
+    --shadow-premium: 0 20px 25px -5px rgba(74, 21, 75, 0.03), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+}
+
+/* --- Core Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--surface-canvas);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- Hero Showcase Banner Jumbotron --- */
+header {
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-dark) 100%);
+    color: #FFFFFF;
+    padding: 65px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-gold);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+/* --- High-End Sticky Glassmorphic Toolbar --- */
+.toolbar {
+    background-color: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+    height: 75px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toolbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+}
+
+.logo-badge {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #D4AF37 100%);
+    color: var(--brand-purple);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    height: 100%;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0 22px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.nav-links a.active {
+    color: #FFFFFF;
+    background: linear-gradient(to bottom, rgba(74, 21, 75, 0.3), rgba(0,0,0,0));
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-gold);
+}
+
+/* --- Dual-Column Architecture Grid --- */
+.page-wrapper {
+    display: flex;
+    max-width: 1440px;
+    margin: 45px auto;
+    gap: 35px;
+    padding: 0 30px;
+}
+
+/* --- Executive Left Sidebar --- */
+.sidebar {
+    flex: 1;
+    min-width: 310px;
+    max-width: 340px;
+    background-color: var(--surface-card);
+    padding: 35px 26px;
+    border-radius: var(--radius-fluid);
+    box-shadow: var(--shadow-premium);
+    height: fit-content;
+    border: 1px solid var(--border-clean);
+}
+
+.sidebar h3 {
+    color: var(--brand-purple);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--brand-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-box {
+    background: #F8FAFC;
+    border-left: 4px solid var(--brand-purple);
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-box:hover {
+    background: #F1F5F9;
+    transform: translateX(4px);
+}
+
+.sidebar-box strong {
+    color: var(--brand-purple);
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+}
+
+.sidebar-box span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.sidebar-box a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+
+/* --- Right Side Main Content Window --- */
+.main-content {
+    flex: 3;
+    background: var(--surface-card);
+    padding: 50px;
+    border-radius: var(--radius-fluid);
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--border-clean);
+}
+
+.main-content h2 {
+    color: var(--brand-purple);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--border-clean);
+    letter-spacing: -0.5px;
+}
+
+.main-content p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+/* --- Dynamic Informational Cards --- */
+.info-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-clean);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 22px;
+    border-left: 5px solid var(--border-clean);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(74, 21, 75, 0.06);
+    border-left-color: var(--brand-purple);
+}
+
+.info-card-title {
+    font-weight: 700;
+    color: var(--brand-purple);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* --- Custom Marker & Ordered Lists Markup --- */
+ol.rubric-ordered-list {
+    margin: 20px 0 25px 25px;
+    color: var(--text-secondary);
+}
+
+ol.rubric-ordered-list li {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+ul.rubric-custom-list {
+    list-style: none;
+    margin: 20px 0 25px 5px;
+}
+
+ul.rubric-custom-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+ul.rubric-custom-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--brand-purple);
+    font-size: 1.1rem;
+    top: -1px;
+}
+
+/* --- Creative Datagrid Control Tables --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 35px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-clean);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+th, td {
+    padding: 18px 24px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-dark) 100%);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-clean);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) td {
+    background-color: #F8FAFC;
+}
+
+/* --- Micro-Media Grid Core Gallery --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.thumbnail-frame {
+    background: #FFFFFF;
+    border: 1px solid var(--border-clean);
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+    transition: all 0.3s ease;
+}
+
+.thumbnail-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--brand-purple);
+}
+
+.thumbnail {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.thumbnail-frame p {
+    margin: 12px 0 0 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--brand-purple);
+}
+
+/* --- Rich Blockquotes & Audio Panels --- */
+blockquote {
+    background: linear-gradient(to right, #FCF5FC, #FFFFFF);
+    border-left: 5px solid var(--accent-gold);
+    margin: 35px 0;
+    padding: 22px 28px;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--brand-purple);
+    border-radius: 0 8px 8px 0;
+}
+
+audio, video {
+    border-radius: 8px;
+    margin-top: 12px;
+    border: 1px solid var(--border-clean);
+}
+
+/* --- Professional Toast Notification Engine Layout --- */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    color: #FFFFFF;
+    padding: 16px 28px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-left: 5px solid var(--accent-gold);
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-container.show {
+    transform: translateY(0);
+}
+
+.toast-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #00FFCC;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* --- Enterprise Level Footer --- */
+footer {
+    background-color: #0F172A;
+    color: #94A3B8;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 90px;
+    border-top: 5px solid var(--brand-purple);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+footer .highlight {
+    color: #FFFFFF;
+    font-weight: 600;
+}
